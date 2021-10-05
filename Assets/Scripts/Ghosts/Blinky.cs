@@ -2,18 +2,24 @@
 
 public class Blinky : Ghost
 {
-    private void Start()
+    public override void SetChaseState()
     {
-        _movePoint.parent = null;
         SetState(new BlinkyChaseState(this));
     }
-    private void Update()
+
+    public override void SetDeadState()
     {
-        if (Vector3.Distance(transform.position, _movePoint.position) <= 0.15f)
-        {
-            Movement.Move(PathFinding.FindTheShortestPath(this), _movePoint);
-        }
-        transform.position = Vector3.MoveTowards(transform.position, _movePoint.position, 3*Time.deltaTime);
+        throw new System.NotImplementedException();
+    }
+
+    public override void SetFrightenedState()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void SetScatterState()
+    {
+        throw new System.NotImplementedException();
     }
 }
 

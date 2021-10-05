@@ -10,7 +10,7 @@ public class BlinkyChaseState : GhostState
 
     public Vector3 GetCurrentTarget()
     {
-        return _context._pacmanPosition.position;
+        return Global.Pacman.transform.position;
     }
 }
 
